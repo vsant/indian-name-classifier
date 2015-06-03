@@ -1,6 +1,7 @@
 # indian-name-classifier
 
 Usage: `find-indian-names.py <URL or filename>`
+- Eg: `find-indian-names.py "http://www.indiatimes.com/"`
 
 Input: URL/file with data (eg list of names, raw HTML page with names scattered throughout)
 
