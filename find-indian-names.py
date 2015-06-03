@@ -62,8 +62,8 @@ def main(args):
     bigrams = create_bigrams(text.split())
 
     # Iterate over bigrams
-    # If fn/ln within corpora, add to dict with score for indianness and gender
-    # Decrease indianness score fn/ln is an English word
+    # If fn/ln within corpora, add to results with score for Indianness and gender
+    # Decrease Indianness score if fn/ln is an ordinary English word
     indian_names = []
     for name in bigrams:
       ln, fn_m, fn_f, fn_u = 0, 0, 0, 0
@@ -90,10 +90,10 @@ def main(args):
       if indianness > 0:
         indian_names.append(("%s %s" % (name[0], name[1]), indianness, gender))
 
-    # Sort by -indianness, +gender, +alpha
+    # Sort first by -indianness, +gender, +alpha
     indian_names = sorted(indian_names, key=lambda x: (-x[1], x[2], x[0]))
 
-    # Display the classified Indian names, with indicators for indianness
+    # Display the classified Indian names, with indicators for Indianness
     for i in indian_names:
       if i[1] > 1:
       	print "+",
