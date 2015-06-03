@@ -62,7 +62,7 @@ def main(args):
     bigrams = create_bigrams(text.split())
 
     # Iterate over bigrams
-    # If fn/ln within corpora, add to results with score for Indianness and gender
+    # If fn/ln within corpora, add to results with score for Indianness/gender
     # Decrease Indianness score if fn/ln is an ordinary English word
     indian_names = []
     for name in bigrams:
