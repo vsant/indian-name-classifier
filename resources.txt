@@ -1,0 +1,27 @@
+LAST NAMES
+http://genealogy.familyeducation.com/browse/origin/indian
+http://en.wiktionary.org/wiki/Appendix:Indian_surnames
+http://www.lowchensaustralia.com/names/popular-indian-names.htm
+
+MALE FIRST NAMES
+http://www.20000-names.com/male_hindi_names.htm
+http://www.studentsoftheworld.info/penpals/stats.php3?Pays=IND
+http://www.behindthename.com/names/gender/masculine/usage/indian
+http://www.babynames.org.uk/indian-boy-baby-names.htm
+
+FEMALE FIRST NAMES
+http://www.20000-names.com/female_hindi_names.htm
+http://www.studentsoftheworld.info/penpals/stats.php3?Pays=IND
+http://www.behindthename.com/names/gender/feminine/usage/indian
+http://www.babynames.org.uk/indian-girl-baby-names.htm
+
+UNISEX FIRST NAMES
+http://www.behindthename.com/names/gender/unisex/usage/indian
+
+AMERICAN NAMES FOR MANUAL EXCLUSION
+http://names.mongabay.com/male_names_alpha.htm
+
+ENGLISH WORD LIST
+Top 5k words: http://www.wordfrequency.info/top5000.asp
+#https://raw.githubusercontent.com/docdis/english-words/master/words.txt
+#SCOWL: http://wordlist.aspell.net/
