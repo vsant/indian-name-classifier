@@ -2,21 +2,23 @@
 # 
 # Indian Name Classifier
 # Vivek Sant
-# 2015-07-02
+# 2015-06-02
 # 
 
 from bs4 import BeautifulSoup
+from inflection import singularize
 import urllib2
 import re
 import os
 
-# Import corpora of Indian last names, Indian first names (male/female/unisex),
+# Import corpora of Indian last names, first names (male/female/unisex),
 # and common english words that are not Indian names
-names_last         = [l.strip().title() for l in open("names.last.txt")]
-names_first_male   = [l.strip().title() for l in open("names.first.male.txt")]
-names_first_female = [l.strip().title() for l in open("names.first.female.txt")]
-names_first_unisex = [l.strip().title() for l in open("names.first.unisex.txt")]
-en_words           = [l.strip().title() for l in open("en_words.txt")]
+script_dir         = os.path.dirname(__file__)
+names_last         = [l.strip().title() for l in open(os.path.join(script_dir, "names.last.txt"))]
+names_first_male   = [l.strip().title() for l in open(os.path.join(script_dir, "names.first.male.txt"))]
+names_first_female = [l.strip().title() for l in open(os.path.join(script_dir, "names.first.female.txt"))]
+names_first_unisex = [l.strip().title() for l in open(os.path.join(script_dir, "names.first.unisex.txt"))]
+en_words           = [l.strip().title() for l in open(os.path.join(script_dir, "en_words.txt"))]
 
 # From an array of consecutive words, create unique potential two-word names
 def create_bigrams(input_list):
@@ -36,7 +38,7 @@ def main(args):
       html = open(args[1]).read()
     else:
       # Provide a User-Agent
-      req = urllib2.Request(args[1], headers={ 'User-Agent': 'Mozilla/5.0' })
+      req = urllib2.Request(args[1], headers={ 'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0' })
       html = urllib2.urlopen(req).read()
     
     soup = BeautifulSoup(html)
@@ -85,10 +87,18 @@ def main(args):
           en_word += 1
         if name[1] in en_words:
           en_word += 1
-      indianness -= en_word
+
+        # Check depluralized word
+        singular_fn, singular_ln = singularize(name[0]), singularize(name[1])
+        if singular_fn != name[0] and singular_fn in en_words:
+          en_word += 1
+        if singular_ln != name[1] and singular_ln in en_words:
+          en_word += 1
+
+        indianness -= en_word
 
       if indianness > 0:
-        indian_names.append(("%s %s" % (name[0], name[1]), indianness, gender))
+        indian_names.append(("%s %s" % name, indianness, gender))
 
     # Sort first by -indianness, +gender, +alpha
     indian_names = sorted(indian_names, key=lambda x: (-x[1], x[2], x[0]))

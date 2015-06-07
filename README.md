@@ -10,3 +10,7 @@ Output: list of names classified as Indian ("Indianness" score, gender score)
 Limitations:
 - Classifies only based on accompanying corpora of Indian first/last names
 - Only works for 2-word names (first/last name)
+
+Module dependencies
+- Beautiful Soup 4 (included)
+- Inflection (included)
