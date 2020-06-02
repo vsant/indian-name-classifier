@@ -904,8 +904,8 @@ Kamalesh
 Kamalnayan
 Kamboja
 Kamlesh
-Kamod;
-Kamraj;
+Kamod
+Kamraj
 Kamran
 Kanad
 Kanak
@@ -938,7 +938,7 @@ Kashif
 Kashinath
 Kashiprasad
 Kashyap
-Kathir;
+Kathir
 Kausar
 Kaushal
 Kaushik
@@ -1300,11 +1300,11 @@ Omar
 Omja
 Omkar
 Omprakash
-Omrao;
+Omrao
 Omswaroop
 Oojam
 Oorjit
-Osman;
+Osman
 Paaus
 Paavan
 Padma
@@ -1771,7 +1771,7 @@ Shameek
 Shami
 Shamindra
 Shams
-Shamshu;
+Shamshu
 Shandar
 Shani
 Shankar
@@ -2187,7 +2187,7 @@ Vidyadhar
 Vidyaranya
 Vidyasagar
 Vidyut
-Vighnesh;
+Vighnesh
 Vihanga
 Vijanyendra
 Vijay
