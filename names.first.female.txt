@@ -109,7 +109,7 @@ Aparijita
 Aparna
 Apoorva
 Apsara
-Apurva;
+Apurva
 Aradhana
 Arati
 Archa
@@ -265,7 +265,7 @@ Chhavvi
 Chhaya
 Chimayi
 Chinmayi
-Chintan;
+Chintan
 Chiti
 Chitkala
 Chitra
