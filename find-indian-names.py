@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # 
 # Indian Name Classifier
 # Vivek Sant
@@ -7,7 +7,7 @@
 
 from bs4 import BeautifulSoup
 from inflection import singularize
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 import re
 import os
 
@@ -30,7 +30,7 @@ def create_bigrams(input_list):
 def main(args):
     # Usage
     if len(args) != 2:
-      print "%s <URL or filename>" % args[0]
+      print("%s <URL or filename>" % args[0])
       return -1
 
     # Input HTML file or URL
@@ -38,17 +38,17 @@ def main(args):
       html = open(args[1]).read()
     else:
       # Provide a User-Agent
-      req = urllib2.Request(args[1], headers={ 'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0' })
-      html = urllib2.urlopen(req).read()
+      req = urllib.request.Request(args[1], headers={ 'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0' })
+      html = urllib.request.urlopen(req).read()
     
-    soup = BeautifulSoup(html)
+    soup = BeautifulSoup(html, 'html.parser')
 
     # Remove Javascript/CSS
     for s in soup(["script", "style"]):
       s.extract()
 
-    # Remove HTML, convert UTF8 to ascii
-    text = " ".join(soup.strings).encode('ascii', 'ignore')
+    # Remove HTML
+    text = " ".join(soup.strings)
 
     # Remove all non-alpha/space, convert all whitespace to single space
     text = text.replace("\n", " ")
@@ -106,10 +106,10 @@ def main(args):
     # Display the classified Indian names, with indicators for Indianness
     for i in indian_names:
       if i[1] > 1:
-      	print "+",
+      	print("+", end=' ')
       else:
-      	print "-",
-      print "%s (%d, %d)" % i
+      	print("-", end=' ')
+      print("%s (%d, %d)" % i)
 
 if __name__ == "__main__":
   import sys 
